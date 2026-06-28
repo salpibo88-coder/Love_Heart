@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Example</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: rgb(171, 44, 44);
+        }
+        .container{
+            width: 400px;
+            height: 500px;
+            background-color: rgb(182, 181, 181);
+            margin: 80px auto;
+            padding: 10px;
+            box-shadow: 10px;
+            border-radius: 10px;
+            box-shadow: 2px 0 px 3px 4px ;
+            
+        }
+        footer, header,.navigativeMenu{
+            width: 100%;
+            height: 14%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 15px;
+            border: 2px solid black;
+            justify-content: space-between;
+            
+        }
+        header{
+            background-color: green;
+        }
+        .navigativeMenu{
+            background-color: blueviolet;
+        }
+        footer{
+            background-color: blue;
+        }
+        main{
+            width: 100%;
+            height: 55%;
+            display: flex;
+        }
+         .left,.center,.right{
+            width: 33.33%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            border: 3px solid rgb(254, 254, 254);
+            justify-content: space-between;
+        }
+        .left{
+            background-color: cyan;
+        }
+        .center{
+            background-color: goldenrod;
+            
+        }
+        .right{
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <header>
+            <h1>Header</h1>
+        </header>
+        <div class="navigativeMenu">
+            <h1>Navigation Menu</h1>
+        </div>
+        <main>
+            <div class="left">Left</div>
+            <div class="center">Center</div>
+            <div class="right">Right</div>
+        </main>
+        <footer>
+            <h1>Footer</h1>
+        </footer>
+    </div>
+</body>
+</html>

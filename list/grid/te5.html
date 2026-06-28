@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SWdPD6InVRV/1HTZb0zr..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .container {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        .fa-regular {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: red;
+        }
+        .fa-solid {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: red;
+            display: none;
+        }
+        .fa-regular:focus + .fa-solid {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://i.pinimg.com/1200x/70/48/b3/7048b30c361e2f0418300d69d6faaca3.jpg" width="100%" height="100%" alt="">
+        <i class="fa-regular fa-heart" tabindex="0"></i>
+        <i class="fa-solid fa-heart"></i>
+    </div>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Layout</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            width: 800px;
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-bottom: 4px solid white;
+            border-right: 2px solid #ffffff;
+          
+        }
+        header {
+            height: 10%;
+            width: 100%;
+            background-color: #000dff;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            font-size: 28px;
+            font-weight: bold;
+            border-bottom: 2px solid white;
+            border-right: 2px solid #ffffff;
+            color:black;
+        }
+        .main-layout {
+            display: flex;
+            border-bottom: 2px solid white;
+            border-right: 2px solid #ffffff;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #15ff00;
+            color: white;
+            padding: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 2px solid white;
+            border-right: 2px solid #ffffff;
+            color:black;
+        }
+        .right-content {
+            flex: 1;
+        }
+        .hero {
+            background-color: #00ffe1;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            font-size: 32px;
+            color:black;
+            font-weight: bold;
+            border-bottom: 2px solid white;
+            border-right: 2px solid #ffffff;
+        }
+        .features {
+            display: flex;
+            background-color: #f3f4f6;
+            border-bottom: 2px solid white;
+        }
+
+        .feature {
+            flex: 1;
+            background-color: #ff0000;
+            color: white;
+            padding: 25px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            border: 2px solid white;
+            color:black;
+            
+        }
+        .content-area {
+            display: flex;
+            
+        }
+        .main-content {
+            flex: 2;
+            background-color: #ff00c8;
+            color: white;
+            padding: 40px;
+            font-size: 26px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-right: 2px solid #ffffff;
+            color:black;
+             border-bottom: 2px solid white;
+        }
+        .side-widgets {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            border-bottom: 2px solid white;
+            border-right: 2px solid #ffffff;
+            color:black;
+        }
+
+        .widget {
+            background-color: #ffb700;
+            color: white;
+            padding: 25px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            border-bottom: 2px solid white;
+            color:black;
+           
+        }
+        .cta {
+            background-color: #ff7300;
+            color: white;
+            padding: 35px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            border-bottom: 2px solid white;
+            color:black; 
+        }
+        .newsletter  ,.related {
+            background-color: #00ff37;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            font-size: 24px;
+            font-weight: bold;
+            border-bottom: 2px solid rgb(255, 255, 255);
+            color:black;
+        }
+        .newsletter{
+            background-color: #6f00ff;
+            /* border-bottom: 2px solid white; */
+        }
+        
+        footer {
+            display: flex;
+            background-color: #ff0080;
+            color: white;
+            border-bottom: 2px solid white;
+            color:black;
+        }
+        .footer-col {
+            flex: 1;
+            padding: 25px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+             border-right: 2px solid #ffffff;
+             border-bottom: 2px solid white; 
+        } 
+        .footer-col:last-child {
+            border-right: none;
+            border-bottom: 2px solid white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            Header
+        </header>
+
+        <div class="main-layout">
+            <div class="sidebar">
+                Sidebar
+            </div>
+            <div class="right-content">
+                <div class="hero">
+                    Hero Section
+                </div>
+                <div class="features">
+                    <div class="feature">Feature 1</div>
+                    <div class="feature">Feature 2</div>
+                    <div class="feature">Feature 3</div>
+                </div>
+                <div class="content-area">
+                    <div class="main-content">
+                        Main Content
+                    </div>
+                    <div class="side-widgets">
+                        <div class="widget">Widget / Text</div>
+                        <div class="cta">Call To Action</div>
+                    </div>
+                </div>              
+                <div class="related">
+                    Related Section
+                </div>
+                <div class="newsletter">
+                    Newsletter / Banner
+                </div>
+
+            </div>
+        </div>
+        <footer>
+            <div class="footer-col">Footer Col 1</div>
+            <div class="footer-col">Footer Col 2</div>
+            <div class="footer-col">Footer Col 3</div>
+            <div class="footer-col">Footer Col 4</div>
+        </footer>
+    </div>
+
+</body>
+</html>

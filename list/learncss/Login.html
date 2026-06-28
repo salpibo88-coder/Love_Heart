@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doument</title>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJr-0iyo4w7DM5PKng-nOAOYZjOLpXHgmdnQ&s");
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+.form{
+    width:350px;
+    padding:30px;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(10px);
+    border-radius:15px;
+    box-shadow:0 0 15px rgba(255, 255, 255, 0.3);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+.Login{
+    color:white;
+    margin-bottom:20px;
+}
+.input1{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+.input1 input{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    outline:none;
+}
+.check{
+    width:100%;
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+    gap:5px;
+    margin:15px 0;
+    color:white;
+    gap: 20px;
+}
+button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    font-size:16px;
+    font-weight:bold;
+    transition:0.3s;
+    background-color: yellow;
+    color: black;
+}
+button:hover{
+    background-color:blue;
+    color:white;
+}
+p{
+    margin-top:10px;
+    color:white;
+    display: flex;
+    align-items: center;
+    justify-self:flex-start start;
+}
+a{
+    color:rgb(17, 255, 0);
+    text-decoration:none;
+}
+</style>
+</head>
+<body>
+<div class="form">
+    <div class="Login">
+        <h1>Login</h1>
+    </div>
+    <div class="input1">
+        <input type="text" placeholder="Username">
+        <input type="password" placeholder="Password">
+    </div>
+    <div class="check">
+        <input type="checkbox">Remember me
+        <span>ForgetPassword?</span> 
+    </div>
+    <button>Login</button>
+    <p>
+        Don't have an account?
+        <a href="#">Register</a>
+    </p>
+</div>
+</body>
+</html>

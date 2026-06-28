@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+body{
+    padding:30px;
+    background:#ffffff;
+    background:url('https://www.transparenttextures.com/patterns/graphy.png');
+}
+.container{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:24px;
+    margin:40px auto;
+}
+.card{
+    background:#f8f8f8;
+    border-radius:16px;
+    padding:16px;
+    transition:0.4s; 
+    position:relative;
+    overflow:hidden;
+}
+.fa-regular {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: red;
+        }
+
+        .fa-solid {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: red;
+            display: none;
+        }
+
+        .fa-regular:focus + .fa-solid {
+            display: block;
+        }
+
+.card img{
+    width:100%;
+    height:250px;
+    object-fit:contain;
+    background:#efefef;
+    border-radius:12px;
+}
+.card img:hover{
+    transition:0.4s;
+    transform:SCALE(1.05);
+    box-shadow:0 0 15px rgba(248, 0, 0, 0.3);
+    box-shadow:0 0 20px rgba(30, 0, 255, 0.4);
+}
+.box{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    margin-top:15px;
+}
+.box h3{
+    font-size:24px;
+    line-height:1.2;
+    max-width:180px;
+}
+.price{
+    font-size:22px;
+    font-weight:bold;
+    color:rgb(0, 0, 0);
+    background:rgb(255, 255, 255);
+}
+.price:hover{
+    background:hotpink;
+    color:rgb(255, 255, 255);
+}
+.desc{
+    color:#030303;
+    margin:10px 0;
+}
+.rating{
+    color:rgb(234, 255, 0);
+    font-size:18px;
+    margin-bottom:15px;
+}
+.rating span{
+    color:#ff00ea;
+}
+button{
+    padding:10px 25px;
+    border:2px solid #444;
+    border-radius:25px;
+    background:#fff;
+    border-color:white;
+}
+button:hover{
+    background:#0400ff;
+    color:#fff;
+    transition:0.4s;
+    border-color:white;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <img src="https://png.pngtree.com/png-clipart/20250707/original/pngtree-white-wireless-headphones-studio-shot-on-transparent-background-png-image_21269103.png" alt="">
+        <i class="fa-regular fa-heart" tabindex="0"></i>
+        <i class="fa-solid fa-heart"></i>
+        <div class="box">
+            <h3>Wireless Over-Ear Headphones</h3>
+            <span class="price">$59.00</span>
+        </div>
+        <p class="desc">Organic catoon, high-fidelity audio</p>
+        <div class="rating">★★★★★ <span>(220)</span></div>
+        <button>Add To Cart</button>
+    </div>
+    <div class="card">
+        <img src="https://img.magnific.com/free-vector/headphones-wireless-realistic-composition-with-isolated-image-phones-with-power-bank-dock-station-with-reflections-vector-illustration_1284-73201.jpg?semt=ais_hybrid&w=740&q=80" alt="">
+        <div class="box">
+            <h3>Wireless Over-Ear Headphones</h3>
+            <span class="price">$58.00</span>
+        </div>
+        <p class="desc">Organic catoon, high-fidelity audio</p>
+        <div class="rating">★★★★★ <span>(220)</span></div>
+        <button>Add To Cart</button>
+    </div>
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRv6kYg-y4JHUUXuZgv2gtItc4pQQCtvvTm2w&s" alt="">
+        <div class="box">
+            <h3>Wireless Over-Ear Headphones</h3>
+            <span class="price">$59.00</span>
+        </div>
+        <p class="desc">Organic catoon, high-fidelity audio</p>
+        <div class="rating">★★★★★ <span>(220)</span></div>
+        <button>Add To Cart</button>
+    </div>
+    <div class="card">
+        <img src="https://media.istockphoto.com/id/108129956/photo/power-supply-and-businessman.jpg?s=612x612&w=0&k=20&c=KO9HkHk66MCfkIn59RyUgsfrXpzudrvEsycSJ2EnR_Q=" alt="">
+        <div class="box">
+            <h3>Wireless Over-Ear Headphones</h3>
+            <span class="price">$59.00</span>
+        </div>
+        <p class="desc">Organic catoon, high-fidelity audio</p>
+        <div class="rating">★★★★★ <span>(220)</span></div>
+        <button>Add To Cart</button>
+    </div>
+</div>
+</body>c 
+</html>

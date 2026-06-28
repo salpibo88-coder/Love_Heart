@@ -1,0 +1,1521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABA Bank | Home Loan - Fixed Rate 6.5% p.a. | Dream Home Starts Here</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Roboto:wght@400;500;700&amp;display=swap');
+        
+        :root {
+            --aba-blue: #003087;
+            --aba-dark-blue: #00205B;
+            --aba-teal: #0066A1;
+            --aba-red: #C8102E;
+        }
+        
+        body { 
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            font-size: 15.5px;
+            line-height: 1.6;
+        }
+        
+        .aba-logo {
+            background: linear-gradient(135deg, #003087 0%, #00205B 100%);
+            box-shadow: 0 4px 6px -1px rgb(0 48 135 / 0.3), 0 2px 4px -2px rgb(0 48 135 / 0.3);
+        }
+        
+        .main-nav {
+            background: linear-gradient(to right, #0066A1, #005a8f);
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #D4E8F7 0%, #E8F4FC 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .loan-badge {
+            background: linear-gradient(145deg, #003087 0%, #00205B 100%);
+            box-shadow: 0 20px 25px -5px rgb(0 48 135 / 0.3), 0 8px 10px -6px rgb(0 48 135 / 0.3);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+        }
+        
+        .loan-badge:hover { 
+            transform: translateY(-6px) scale(1.02); 
+            box-shadow: 0 25px 50px -12px rgb(0 48 135 / 0.35), 0 10px 10px -6px rgb(0 48 135 / 0.3);
+        }
+        
+        .section-title { 
+            font-size: 17px; 
+            font-weight: 700; 
+            color: #1f2937; 
+            margin-bottom: 16px; 
+            letter-spacing: -0.2px;
+        }
+        
+        .promo-star {
+            position: relative;
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            color: white;
+            padding: 10px 26px;
+            border-radius: 9999px;
+            font-size: 14.5px;
+            font-weight: 800;
+            box-shadow: 0 10px 15px -3px rgb(220 38 38 / 0.4), 0 4px 6px -4px rgb(220 38 38 / 0.3);
+            letter-spacing: 0.3px;
+        }
+        
+        .promo-star::after {
+            content: '★';
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #991b1b;
+            color: white;
+            width: 22px;
+            height: 22px;
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.2);
+        }
+        
+        .news-card, .feature-card, .rates-card, .benefit-card, .testimonial-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.08);
+            border: 1px solid #e5e7eb;
+        }
+        
+        .news-card:hover, .feature-card:hover, .rates-card:hover, .benefit-card:hover, .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            border-color: #d1d5db;
+        }
+        
+        .footer-dark { 
+            background: linear-gradient(to right, #003087, #00205B); 
+        }
+        
+        .metric-value { 
+            font-size: 52px; 
+            line-height: 1; 
+            font-weight: 800; 
+            letter-spacing: -2.5px; 
+        }
+        
+        /* Enhanced Nav */
+        .aba-nav-item {
+            position: relative;
+            padding: 0 20px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            font-size: 14.5px;
+            font-weight: 600;
+            cursor: pointer;
+            color: white;
+            user-select: none;
+            transition: all 0.15s ease;
+        }
+        
+        .aba-nav-item:hover {
+            background-color: rgba(255,255,255,0.15);
+            font-weight: 700;
+        }
+        
+        .aba-nav-item:hover::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 20px;
+            right: 20px;
+            height: 3.5px;
+            background: white;
+            border-radius: 3px 3px 0 0;
+        }
+        
+        .aba-nav-item a { 
+            color: inherit; 
+            text-decoration: none; 
+            display: flex; 
+            align-items: center; 
+            height: 100%; 
+            width: 100%; 
+        }
+        
+        /* Mega dropdown - with nice drop down animation when mouse hovers (ប៉ះ) */
+        .mega-drop {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 240px;
+            background: white;
+            border-radius: 0 0 14px 14px;
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.15), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            z-index: 200;
+            border: 1px solid #e5e7eb;
+            border-top: none;
+            padding: 8px 0;
+            
+            /* Smooth drop-down animation */
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+            pointer-events: none;
+        }
+        
+        /* Show + animate dropdown when mouse touches/hovers any nav item */
+        #nav-personal:hover .mega-drop,
+        #nav-business:hover .mega-drop,
+        #nav-aba-mobile:hover .mega-drop,
+        #nav-self-banking:hover .mega-drop,
+        #nav-oriental-desk:hover .mega-drop,
+        #nav-support:hover .mega-drop {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+        
+        .mega-drop a {
+            display: block;
+            padding: 11px 20px;
+            font-size: 14px;
+            color: #374151;
+            text-decoration: none;
+            transition: all 0.12s ease;
+            font-weight: 500;
+        }
+        
+        .mega-drop a:hover { 
+            background: #f0f4ff; 
+            color: #003087; 
+            padding-left: 24px;
+        }
+        
+        .mega-drop .drop-divider { 
+            height: 1px; 
+            background: #f3f4f6; 
+            margin: 6px 16px; 
+        }
+        
+        #nav-personal:hover #personal-arrow,
+        #nav-business:hover #business-arrow,
+        #nav-aba-mobile:hover #aba-mobile-arrow,
+        #nav-self-banking:hover #self-banking-arrow,
+        #nav-oriental-desk:hover #oriental-desk-arrow,
+        #nav-support:hover #support-arrow {
+            transform: rotate(180deg);
+        }
+        
+        #personal-arrow, #business-arrow, #aba-mobile-arrow, #self-banking-arrow, #oriental-desk-arrow, #support-arrow {
+            transition: transform 0.25s ease;
+        }
+        
+        /* Language dropdown */
+        #lang-dropdown {
+            display: none;
+            position: absolute;
+            top: calc(100% + 6px);
+            right: 0;
+            min-width: 190px;
+            background: white;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.15), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            z-index: 200;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .lang-option {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 18px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            color: #1f2937;
+            text-align: left;
+            transition: background 0.15s ease;
+        }
+        
+        .lang-option:hover { background: #f8fafc; }
+        
+        .lang-name { font-weight: 700; font-size: 14px; }
+        .lang-code { font-size: 12px; color: #9ca3af; }
+        .lang-check { margin-left: auto; color: #003087; font-size: 15px; }
+        
+        /* Hero Slideshow - LARGER &amp; MORE IMPACTFUL */
+        .hero-slide-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 580px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px -15px rgb(0 0 0 / 0.3), 0 10px 10px -5px rgb(0 0 0 / 0.2);
+            border: 1px solid rgba(255,255,255,0.9);
+            background: #e8f2fb;
+        }
+        
+        .hero-slides {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .hero-slide {
+            min-width: 100%;
+            height: 400px;
+            object-fit: cover;
+            object-position: center 30%;
+            display: block;
+        }
+        
+        .slide-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.95);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            color: #003087;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: all 0.2s ease;
+            z-index: 10;
+        }
+        
+        .slide-btn:hover { 
+            background: white; 
+            transform: translateY(-50%) scale(1.15); 
+            box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+        }
+        
+        .slide-btn.prev { left: 14px; }
+        .slide-btn.next { right: 14px; }
+        
+        .slide-dots {
+            position: absolute;
+            bottom: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+        }
+        
+        .slide-dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.65);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: none;
+            padding: 0;
+        }
+        
+        .slide-dot.active { 
+            background: white; 
+            transform: scale(1.4); 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .approved-badge {
+            position: absolute;
+            bottom: 18px;
+            right: 18px;
+            background: rgba(255,255,255,0.97);
+            padding: 8px 18px;
+            border-radius: 999px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            font-size: 12.5px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #374151;
+            z-index: 10;
+        }
+        
+        /* Extra large screen optimization */
+        @media (min-width: 1600px) {
+            .hero-slide-wrapper {
+                max-width: 620px;
+            }
+            .hero-slide {
+                height: 420px;
+            }
+            .metric-value {
+                font-size: 58px;
+            }
+            body {
+                font-size: 16px;
+            }
+        }
+        
+        /* Mobile menu */
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.12);
+            z-index: 100;
+            border-top: 1px solid #e5e7eb;
+        }
+        
+        .mobile-menu.open {
+            display: block;
+        }
+        
+        .mobile-nav-item {
+            display: block;
+            padding: 16px 24px;
+            color: #374151;
+            font-size: 15.5px;
+            font-weight: 600;
+            border-bottom: 1px solid #f3f4f6;
+            text-decoration: none;
+        }
+        
+        .mobile-nav-item:hover {
+            background: #f8fafc;
+            color: #003087;
+        }
+        
+        /* Calculator styling */
+        .calc-input {
+            transition: all 0.2s ease;
+        }
+        
+        .calc-input:focus {
+            border-color: #003087;
+            box-shadow: 0 0 0 3px rgba(0, 48, 135, 0.1);
+            outline: none;
+        }
+        
+        .result-box {
+            background: linear-gradient(145deg, #f8fafc 0%, #ffffff 100%);
+            border: 1px solid #e2e8f0;
+        }
+        
+        /* Benefit cards */
+        .benefit-icon {
+            width: 52px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #003087 0%, #0066A1 100%);
+            color: white;
+            font-size: 22px;
+            box-shadow: 0 4px 6px -1px rgb(0 48 135 / 0.3);
+        }
+        
+        /* Testimonial */
+        .testimonial-card {
+            background: white;
+        }
+        
+        .nav-active {
+            font-weight: 700;
+            position: relative;
+        }
+        
+        .nav-active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 20px;
+            right: 20px;
+            height: 3.5px;
+            background: white;
+            border-radius: 3px 3px 0 0;
+        }
+        
+        .premium-shadow {
+            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.15), 0 10px 10px -6px rgb(0 0 0 / 0.1);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <!-- Top Header Bar -->
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-[1520px] mx-auto px-8 lg:px-10 h-[62px] flex items-center justify-between">
+            <div class="flex items-center gap-x-4">
+                <!-- Logo -->
+                <div class="aba-logo w-[58px] h-[58px] rounded-xl flex flex-col items-center justify-center text-white shadow-sm cursor-pointer" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+                    <span class="font-black text-[28px] tracking-[-2px] leading-none mt-0.5">ABA</span>
+                    <span class="font-bold text-[10px] tracking-[2px] -mt-1">BANK</span>
+                </div>
+                <div>
+                    <div class="text-[#C8102E] text-[10.5px] font-extrabold leading-[10px] tracking-[1.8px]">NATIONAL BANK</div>
+                    <div class="text-[#C8102E] text-[10.5px] font-extrabold leading-[10px] tracking-[1.8px]">OF CAMBODIA</div>
+                </div>
+            </div>
+            
+            <!-- Desktop Top Nav -->
+            <nav class="hidden md:flex items-center gap-x-8 text-[14px] font-semibold text-gray-700">
+                <a href="#" class="hover:text-[#003087] transition-colors duration-200">About ABA</a>
+                <a href="#" class="hover:text-[#003087] transition-colors duration-200">Careers</a>
+                <a href="#" class="hover:text-[#003087] transition-colors duration-200">News</a>
+                <a href="#" class="hover:text-[#003087] transition-colors duration-200">Promotions</a>
+            </nav>
+            
+            <div class="flex items-center gap-x-3.5">
+                <!-- Search -->
+                <div class="hidden lg:flex items-center bg-gray-100 hover:bg-gray-200 transition-all rounded-full pl-5 pr-4 py-2 text-sm w-[240px] border border-transparent focus-within:border-gray-300">
+                    <i class="fa-solid fa-search text-gray-400 mr-3"></i>
+                    <input type="text" placeholder="Search ABA Bank..." class="bg-transparent border-none outline-none text-sm w-full placeholder:text-gray-400 font-medium">
+                </div>
+                
+                <!-- Login -->
+                <button onclick="showLoginModal()" 
+                        class="flex items-center gap-x-2.5 px-6 py-[9px] text-sm font-bold text-gray-700 hover:bg-gray-100 rounded-full transition-all border border-gray-300 hover:border-gray-400 active:scale-[0.985]">
+                    <i class="fa-solid fa-user text-gray-500"></i>
+                    <span>Login</span>
+                </button>
+                
+                <!-- ABA Business -->
+                <button onclick="window.location.href='#'" 
+                        class="px-7 py-[9px] bg-[#C8102E] hover:bg-[#a50d24] active:bg-[#8c0a1f] transition-all text-white text-sm font-extrabold rounded-full shadow-md active:scale-[0.985]">
+                    ABA Business
+                </button>
+                
+                <!-- Mobile Hamburger -->
+                <button id="mobile-menu-btn" class="md:hidden flex items-center justify-center w-11 h-11 text-gray-600 hover:text-[#003087] transition-colors">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu md:hidden">
+            <div class="max-w-[1520px] mx-auto">
+                <a href="#" class="mobile-nav-item">About ABA</a>
+                <a href="#" class="mobile-nav-item">Careers</a>
+                <a href="#" class="mobile-nav-item">News</a>
+                <a href="#" class="mobile-nav-item">Promotions</a>
+                <div class="px-6 py-4 bg-gray-50">
+                    <button onclick="showLoginModal(); document.getElementById('mobile-menu').classList.remove('open');" 
+                            class="w-full py-3 bg-white border border-gray-300 text-gray-700 font-bold rounded-xl text-sm active:scale-[0.985]">
+                        Login to ABA
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Navigation Bar -->
+    <nav class="main-nav text-white shadow-sm sticky top-[62px] z-40">
+        <div class="max-w-[1520px] mx-auto px-8 lg:px-10">
+            <ul class="flex items-center h-12 text-sm font-semibold overflow-x-auto hide-scrollbar">
+                <li class="aba-nav-item whitespace-nowrap" id="nav-personal">
+                    Personal
+                    <i class="fa-solid fa-chevron-down ml-2 text-[11px]" id="personal-arrow"></i>
+                    <div class="mega-drop">
+                        <a href="#">Savings Accounts</a>
+                        <a href="#">Current Accounts</a>
+                        <a href="#">Fixed Deposits</a>
+                        <a href="#">Home Loans</a>
+                        <a href="#">Personal Loans</a>
+                        <div class="drop-divider"></div>
+                        <a href="#">ABA Mobile</a>
+                    </div>
+                </li>
+                <li class="aba-nav-item whitespace-nowrap" id="nav-business">
+                    Business
+                    <i class="fa-solid fa-chevron-down ml-2 text-[11px]" id="business-arrow"></i>
+                    <div class="mega-drop">
+                        <a href="#">Business Accounts</a>
+                        <a href="#">Business Loans</a>
+                        <a href="#">Trade Finance</a>
+                        <a href="#">Cash Management</a>
+                        <a href="#">ABA Business App</a>
+                        <div class="drop-divider"></div>
+                        <a href="#">Corporate Banking</a>
+                    </div>
+                </li>
+                <li class="aba-nav-item whitespace-nowrap" id="nav-aba-mobile">
+                    ABA Mobile
+                    <i class="fa-solid fa-chevron-down ml-2 text-[11px]" id="aba-mobile-arrow"></i>
+                    <div class="mega-drop">
+                        <a href="#">Download for iOS</a>
+                        <a href="#">Download for Android</a>
+                        <a href="#">App Features</a>
+                        <a href="#">Mobile Security</a>
+                        <a href="#">Tutorials &amp; Guides</a>
+                        <div class="drop-divider"></div>
+                        <a href="#">Update to Latest Version</a>
+                    </div>
+                </li>
+                <li class="aba-nav-item whitespace-nowrap" id="nav-self-banking">
+                    Self-Banking
+                    <i class="fa-solid fa-chevron-down ml-2 text-[11px]" id="self-banking-arrow"></i>
+                    <div class="mega-drop">
+                        <a href="#">Find ATM &amp; Branch</a>
+                        <a href="#">Internet Banking</a>
+                        <a href="#">Self-Service Kiosks</a>
+                        <a href="#">Phone Banking</a>
+                        <a href="#">Cardless Withdrawal</a>
+                        <div class="drop-divider"></div>
+                        <a href="#">Bill Payment Services</a>
+                    </div>
+                </li>
+                <li class="aba-nav-item whitespace-nowrap" id="nav-oriental-desk">
+                    Oriental Desk
+                    <i class="fa-solid fa-chevron-down ml-2 text-[11px]" id="oriental-desk-arrow"></i>
+                    <div class="mega-drop">
+                        <a href="#">Oriental Banking Services</a>
+                        <a href="#">Chinese Language Support</a>
+                        <a href="#">Remittance to Asia</a>
+                        <a href="#">Wealth Management</a>
+                        <a href="#">Dedicated Relationship Manager</a>
+                        <div class="drop-divider"></div>
+                        <a href="#">Contact Oriental Desk</a>
+                    </div>
+                </li>
+                <li class="aba-nav-item whitespace-nowrap" id="nav-support">
+                    Support
+                    <i class="fa-solid fa-chevron-down ml-2 text-[11px]" id="support-arrow"></i>
+                    <div class="mega-drop">
+                        <a href="#">FAQs</a>
+                        <a href="#">Contact Us</a>
+                        <a href="#">Branch &amp; ATM Locator</a>
+                        <a href="#">Report a Problem</a>
+                        <a href="#">Security Center</a>
+                        <div class="drop-divider"></div>
+                        <a href="#">Live Chat Support</a>
+                        
+                        <div class="drop-divider"></div>
+                        <div style="padding: 12px 20px; font-size: 13px; line-height: 1.5; color: #4b5563; background: #f8fafc; border-radius: 0 0 14px 14px; margin-top: 4px;">
+                            <strong style="color: #003087; font-weight: 700;">At ABA,</strong> we are committed to provide you with our best service and effectively deliver the products and services you need. Your feedbacks and suggestions are important to help us improve the quality of your banking experience.
+                        </div>
+                    </div>
+                </li>
+                
+                <li class="flex-1 hidden xl:block"></li>
+                
+                <!-- Language Selector -->
+                <li style="position:relative;" id="lang-wrapper" class="ml-auto">
+                    <button id="lang-btn" onclick="toggleLangDropdown()"
+                        style="display:flex;align-items:center;gap:7px;padding:5px 16px;background:transparent;border:none;cursor:pointer;color:white;font-size:14px;font-weight:600;height:48px;">
+                        <i class="fa-solid fa-globe" style="font-size:13px;"></i>
+                        <span id="lang-label">EN</span>
+                        <i class="fa-solid fa-chevron-down" id="lang-arrow" style="font-size:10px;transition:transform 0.25s;"></i>
+                    </button>
+                    <div id="lang-dropdown">
+                        <button class="lang-option" onclick="selectLang('EN','English')">
+                            <span style="font-size:19px;">🇺🇸</span>
+                            <div><div class="lang-name">English</div><div class="lang-code">EN</div></div>
+                            <i class="fa-solid fa-check lang-check" id="check-en"></i>
+                        </button>
+                        <div style="height:1px;background:#f3f4f6;margin:0 12px;"></div>
+                        <button class="lang-option" onclick="selectLang('KH','ភាសាខ្មែរ')">
+                            <span style="font-size:19px;">🇰🇭</span>
+                            <div><div class="lang-name">ភាសាខ្មែរ</div><div class="lang-code">KH</div></div>
+                            <i class="fa-solid fa-check lang-check" id="check-kh" style="visibility:hidden;"></i>
+                        </button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Hero Banner - BIGGER &amp; MORE IMPACTFUL -->
+    <section class="hero-bg pt-10 pb-9">
+        <div class="max-w-[1520px] mx-auto px-8 lg:px-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-x-8 gap-y-10 items-center">
+                
+                <!-- Loan Badge - LARGER -->
+                <div class="lg:col-span-3 flex justify-center lg:justify-start">
+                    <div class="loan-badge text-white w-[245px] lg:w-[265px] rounded-3xl p-7 text-center shadow-2xl">
+                        <div class="uppercase tracking-[2.5px] text-xs font-extrabold opacity-90 mb-1.5">HOME LOAN</div>
+                        
+                        <div class="flex items-baseline justify-center gap-x-1">
+                            <span class="metric-value">6.5</span>
+                            <span class="text-4xl font-black">%</span>
+                        </div>
+                        <div class="text-sm tracking-[1.5px] font-extrabold -mt-1 mb-2">PER ANNUM</div>
+                        
+                        <div class="border-t border-white/30 my-3.5 w-14 mx-auto"></div>
+                        
+                        <div>
+                            <span class="text-xs font-extrabold tracking-[1.5px] opacity-90">UP TO</span>
+                            <div class="metric-value text-[44px] leading-none mt-[-6px]">25</div>
+                            <div class="text-sm font-extrabold tracking-[1.5px] -mt-1">YEARS</div>
+                        </div>
+                        
+                        <div class="mt-4 pt-3 border-t border-white/20">
+                            <div class="text-[10px] font-bold tracking-wider opacity-90">FIXED RATE • NO SURPRISES</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Center: Slideshow - MUCH LARGER -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="hero-slide-wrapper">
+                        <div class="hero-slides" id="heroSlides">
+                            <img class="hero-slide" src="https://www.ababank.com/uploads/tx_news/aba_paysound_voice_dt_en.jpg" alt="Happy family celebrating new home with ABA Bank">
+                            <img class="hero-slide" src="https://www.khmertimeskh.com/wp-content/uploads/2023/10/Mobile_User_1920x1080.jpg" alt="Modern family enjoying their new home">
+                            <img class="hero-slide" src="https://www.ababank.com/fileadmin/user_upload/Main_Banner/ABA-basic-banking-new_24.jpg" alt="Beautiful modern home exterior financed by ABA">
+                            <img class="hero-slide" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlNWzD9MfSboE8bniKAdrPZYxhFbHoVnWJYovvRg4y-PXo1ifSnp_viqNj&s=10" alt="Cozy modern living room in a new home">
+                        </div>
+                        
+                        <button class="slide-btn prev" onclick="changeSlide(-1)">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+                        <button class="slide-btn next" onclick="changeSlide(1)">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                        
+                        <div class="slide-dots" id="slideDots"></div>
+                        
+                        <div class="approved-badge">
+                            <i class="fa-solid fa-check-circle text-emerald-500"></i>
+                            <span class="font-bold">Approved in minutes</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Text Content - BIGGER -->
+                <div class="lg:col-span-4 text-center lg:text-left px-3">
+                    <div class="inline-flex items-center gap-x-2 bg-white/70 backdrop-blur px-4 py-1 rounded-full mb-4 shadow-sm">
+                        <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+                        <span class="text-xs font-extrabold tracking-[1px] text-emerald-700">LIMITED TIME OFFER</span>
+                    </div>
+                    
+                    <h1 class="text-[#003087] text-[29px] lg:text-[34px] xl:text-[37px] leading-[1.08] font-extrabold tracking-[-0.6px]">
+                        FIXED RATE FOR<br>THE ENTIRE LOAN TERM
+                    </h1>
+                    
+                    <p class="mt-4 text-gray-600 text-[15px] max-w-md mx-auto lg:mx-0">
+                        Lock in Cambodia's most competitive home loan rate. 
+                        No hidden fees. No rate surprises. Ever.
+                    </p>
+                    
+                    <div class="mt-6 mb-2 flex justify-center lg:justify-start">
+                        <div class="promo-star inline-flex items-center px-7 py-[7px] text-[15px] font-extrabold shadow-xl">
+                            <span class="mr-1.5">$0</span> PROCESSING FEE 
+                            <span class="text-xs font-extrabold tracking-wider ml-2 opacity-90">UNTIL 30 JUNE 2026</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+                        <a href="#" onclick="document.getElementById('calculator-section').scrollIntoView({ behavior: 'smooth' })" 
+                           class="inline-flex items-center justify-center bg-[#C8102E] hover:bg-[#9f0c22] active:bg-[#8c0a1f] transition-all text-white font-extrabold text-sm px-10 py-[13px] rounded-2xl shadow-lg active:scale-[0.985]">
+                            Calculate Your Payment
+                        </a>
+                        
+                        <a href="#" class="inline-flex items-center justify-center border-2 border-[#003087] hover:bg-[#003087] hover:text-white transition-all text-[#003087] font-extrabold text-sm px-8 py-[13px] rounded-2xl active:scale-[0.985]">
+                            Learn More
+                        </a>
+                    </div>
+                    
+                    <div class="mt-4 text-xs text-gray-500 flex items-center justify-center lg:justify-start gap-x-1.5">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>Terms and conditions apply. Subject to credit approval.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Trust bar -->
+        <div class="max-w-[1520px] mx-auto px-8 lg:px-10 mt-8">
+            <div class="flex flex-wrap justify-center lg:justify-start gap-x-8 gap-y-3 text-xs">
+                <div class="flex items-center gap-x-2 text-gray-600">
+                    <i class="fa-solid fa-check-circle text-emerald-500"></i>
+                    <span class="font-semibold">Over 150,000 happy homeowners</span>
+                </div>
+                <div class="flex items-center gap-x-2 text-gray-600">
+                    <i class="fa-solid fa-check-circle text-emerald-500"></i>
+                    <span class="font-semibold">4.9/5 customer rating</span>
+                </div>
+                <div class="flex items-center gap-x-2 text-gray-600">
+                    <i class="fa-solid fa-check-circle text-emerald-500"></i>
+                    <span class="font-semibold">Fastest approval in Cambodia</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Content Cards - SPACIOUS -->
+    <section class="max-w-[1520px] mx-auto px-8 lg:px-10 pt-9 pb-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <!-- Latest News -->
+            <div class="news-card bg-white border border-gray-200 rounded-2xl overflow-hidden">
+                <div class="px-5 pt-5 pb-2">
+                    <h3 class="section-title flex items-center gap-x-2.5">
+                        <i class="fa-solid fa-newspaper text-[#003087]"></i> 
+                        Latest News
+                    </h3>
+                </div>
+                <div class="relative">
+                    <img src="https://www.ababank.com/typo3temp/_processed_/csm_aba_request_khqr_slider_en_v4_8c2e8a058b.jpg" alt="ABA Bank news" class="w-full h-[162px] object-cover">
+                    <div class="absolute top-4 right-4 bg-white text-[#003087] text-[10px] font-extrabold px-3 py-0.5 rounded shadow">NEW</div>
+                </div>
+                <div class="px-5 py-4 text-[14.5px]">
+                    <p class="font-bold leading-snug text-gray-800">ABA Bank strengthens ABC Cybersecurity with new strategic partnership</p>
+                    <div class="flex items-center justify-between mt-3.5">
+                        <span class="text-xs text-gray-500 font-medium">2 days ago • Phnom Penh</span>
+                        <a href="#" class="text-[#003087] hover:underline text-xs font-extrabold flex items-center">
+                            Read full story <i class="fa-solid fa-chevron-right ml-1.5 text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- New Feature -->
+            <div class="feature-card bg-white border border-gray-200 rounded-2xl overflow-hidden">
+                <div class="px-5 pt-5 pb-2">
+                    <h3 class="section-title flex items-center gap-x-2.5">
+                        <i class="fa-solid fa-magic text-[#003087]"></i> 
+                        New Feature
+                    </h3>
+                </div>
+                <div class="relative">
+                    <img src="https://www.ababank.com/typo3temp/_processed_/csm_aba_mortgage_loan_en_v5_cc52755158.jpg" alt="GiftCard feature" class="w-full h-[162px] object-cover">
+                    <div class="absolute top-4 left-4">
+                        <span class="bg-[#C8102E] text-white text-[10px] font-extrabold px-3.5 py-[1px] rounded tracking-wider">NEW</span>
+                    </div>
+                </div>
+                <div class="px-5 py-4">
+                    <div class="font-extrabold text-xl leading-none text-gray-900">GiftCard</div>
+                    <div class="text-xs uppercase tracking-[1.5px] font-extrabold text-gray-500 -mt-0.5 mb-1.5">A NEW WAY TO GIFT</div>
+                    <p class="text-sm text-gray-600 leading-snug">Send meaningful gifts instantly.<br>Directly from your ABA Mobile app.</p>
+                    <a href="#" class="mt-4 inline-flex text-xs font-extrabold items-center text-[#003087] hover:text-[#C8102E] transition-colors">
+                        Try it now in ABA Mobile <i class="fa-solid fa-external-link-alt ml-2 text-xs"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Exchange Rates -->
+            <div class="rates-card bg-white border border-gray-200 rounded-2xl overflow-hidden">
+                <div class="px-5 pt-5 pb-2 flex items-center justify-between">
+                    <h3 class="section-title flex items-center gap-x-2.5">
+                        <i class="fa-solid fa-chart-line text-[#003087]"></i> 
+                        Exchange Rates
+                    </h3>
+                    <span class="text-[10px] text-emerald-600 font-extrabold flex items-center gap-x-1">
+                        <i class="fa-solid fa-circle text-[8px]"></i> LIVE
+                    </span>
+                </div>
+                <div class="px-5 pb-5">
+                    <div class="bg-gray-50 rounded-xl p-4 text-xs">
+                        <div class="grid grid-cols-3 gap-y-2 text-gray-700 font-medium">
+                            <div class="font-extrabold text-gray-500 text-xs">CURRENCY</div>
+                            <div class="font-extrabold text-gray-500 text-right text-xs">BUY</div>
+                            <div class="font-extrabold text-gray-500 text-right text-xs">SELL</div>
+                            
+                            <div class="flex items-center"><span class="font-mono font-extrabold">USD</span></div>
+                            <div class="text-right font-mono font-bold">4,050</div>
+                            <div class="text-right font-mono font-bold">4,100</div>
+                            
+                            <div class="flex items-center"><span class="font-mono font-extrabold">EUR</span></div>
+                            <div class="text-right font-mono font-bold">4,380</div>
+                            <div class="text-right font-mono font-bold">4,450</div>
+                            
+                            <div class="flex items-center"><span class="font-mono font-extrabold">GBP</span></div>
+                            <div class="text-right font-mono font-bold">5,150</div>
+                            <div class="text-right font-mono font-bold">5,240</div>
+                            
+                            <div class="flex items-center gap-1"><span class="font-mono font-extrabold">JPY</span><span class="text-[9px] text-gray-400">(100)</span></div>
+                            <div class="text-right font-mono font-bold">2,680</div>
+                            <div class="text-right font-mono font-bold">2,740</div>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <a href="#" class="text-xs font-extrabold text-[#003087] hover:underline inline-flex items-center">
+                            View full foreign exchange rates <i class="fa-solid fa-arrow-right-long ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- WHY CHOOSE ABA HOME LOAN - NEW BIG SECTION -->
+    <section class="bg-gray-50 py-12">
+        <div class="max-w-[1520px] mx-auto px-8 lg:px-10">
+            <div class="text-center mb-9">
+                <div class="inline-block px-4 py-1 bg-white rounded-full text-xs font-extrabold tracking-wider text-[#003087] shadow-sm mb-3">WHY ABA?</div>
+                <h2 class="text-3xl font-extrabold text-gray-900 tracking-tight">The smartest way to finance your dream home</h2>
+                <p class="mt-3 text-gray-600 max-w-lg mx-auto">Join thousands of Cambodians who chose ABA for their biggest investment.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                <!-- Benefit 1 -->
+                <div class="benefit-card bg-white rounded-2xl p-6 border border-gray-100">
+                    <div class="benefit-icon mb-5">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+                    <h4 class="font-extrabold text-lg mb-2">True Fixed Rate</h4>
+                    <p class="text-sm text-gray-600 leading-relaxed">Your interest rate is locked at 6.5% for the entire loan term. No surprises, no rate hikes, ever.</p>
+                </div>
+                
+                <!-- Benefit 2 -->
+                <div class="benefit-card bg-white rounded-2xl p-6 border border-gray-100">
+                    <div class="benefit-icon mb-5">
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </div>
+                    <h4 class="font-extrabold text-lg mb-2">Up to 25 Years</h4>
+                    <p class="text-sm text-gray-600 leading-relaxed">Spread your payments over a longer period to keep monthly installments comfortable and affordable.</p>
+                </div>
+                
+                <!-- Benefit 3 -->
+                <div class="benefit-card bg-white rounded-2xl p-6 border border-gray-100">
+                    <div class="benefit-icon mb-5">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h4 class="font-extrabold text-lg mb-2">Lightning Fast Approval</h4>
+                    <p class="text-sm text-gray-600 leading-relaxed">Get pre-approved in minutes and full approval within 48 hours with our digital-first process.</p>
+                </div>
+                
+                <!-- Benefit 4 -->
+                <div class="benefit-card bg-white rounded-2xl p-6 border border-gray-100">
+                    <div class="benefit-icon mb-5">
+                        <i class="fa-solid fa-gift"></i>
+                    </div>
+                    <h4 class="font-extrabold text-lg mb-2">$0 Processing Fee</h4>
+                    <p class="text-sm text-gray-600 leading-relaxed">Save thousands on fees. This limited-time offer ends 30 June 2026. Act now.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- LOAN CALCULATOR - NEW &amp; USEFUL -->
+    <section id="calculator-section" class="max-w-[1520px] mx-auto px-8 lg:px-10 py-14">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-extrabold tracking-tight text-gray-900">See how affordable your dream home can be</h2>
+                <p class="mt-2 text-gray-600">Use our calculator to estimate your monthly payment instantly</p>
+            </div>
+            
+            <div class="bg-white border border-gray-200 rounded-3xl p-8 lg:p-9 premium-shadow">
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+                    
+                    <!-- Inputs -->
+                    <div class="lg:col-span-3 space-y-6">
+                        <div>
+                            <label class="block text-xs font-extrabold tracking-wider text-gray-500 mb-2">LOAN AMOUNT (USD)</label>
+                            <div class="flex items-center gap-x-3">
+                                <input type="range" id="loanAmountRange" min="20000" max="500000" step="1000" value="180000" 
+                                       class="w-full accent-[#003087]" oninput="updateCalculator()">
+                                <input type="number" id="loanAmount" value="180000" 
+                                       class="calc-input w-32 border border-gray-300 rounded-xl px-4 py-2.5 text-sm font-bold focus:border-[#003087]" 
+                                       oninput="updateCalculator()">
+                            </div>
+                            <div class="flex justify-between text-[10px] text-gray-400 mt-1 px-0.5">
+                                <div>$20,000</div>
+                                <div>$500,000</div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-xs font-extrabold tracking-wider text-gray-500 mb-2">LOAN TERM</label>
+                            <div class="flex items-center gap-x-4">
+                                <select id="loanTerm" onchange="updateCalculator()" 
+                                        class="calc-input flex-1 border border-gray-300 rounded-xl px-4 py-3 text-sm font-bold focus:border-[#003087]">
+                                    <option value="10">10 years</option>
+                                    <option value="15">15 years</option>
+                                    <option value="20" selected>20 years</option>
+                                    <option value="25">25 years</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-xs font-extrabold tracking-wider text-gray-500 mb-2">INTEREST RATE (FIXED)</label>
+                            <div class="flex items-center bg-gray-100 border border-gray-200 rounded-xl px-5 py-3.5">
+                                <div class="flex-1">
+                                    <span class="font-extrabold text-2xl text-[#003087]">6.5</span>
+                                    <span class="font-bold text-gray-500">%</span>
+                                </div>
+                                <div class="text-xs font-extrabold text-emerald-600 bg-emerald-100 px-3 py-1 rounded-full">LOCKED FOR ENTIRE TERM</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Results -->
+                    <div class="lg:col-span-2 bg-[#003087] text-white rounded-2xl p-7 flex flex-col">
+                        <div class="text-xs font-extrabold tracking-[1.5px] opacity-75 mb-1">YOUR ESTIMATED</div>
+                        <div class="text-5xl font-extrabold tracking-tighter" id="monthlyPayment">$1,384</div>
+                        <div class="text-sm opacity-75 -mt-1">per month</div>
+                        
+                        <div class="my-5 border-t border-white/20"></div>
+                        
+                        <div class="grid grid-cols-2 gap-y-4 text-sm">
+                            <div>
+                                <div class="text-xs opacity-70">Total Interest</div>
+                                <div class="font-extrabold text-xl" id="totalInterest">$152,160</div>
+                            </div>
+                            <div>
+                                <div class="text-xs opacity-70">Total Payable</div>
+                                <div class="font-extrabold text-xl" id="totalPayable">$332,160</div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-auto pt-5">
+                            <button onclick="applyNow()" 
+                                    class="w-full py-3.5 bg-white text-[#003087] font-extrabold text-sm rounded-2xl hover:bg-gray-100 active:scale-[0.985] transition-all flex items-center justify-center gap-x-2">
+                                <span>APPLY FOR THIS LOAN</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                            <div class="text-center text-[10px] mt-2.5 opacity-60">No obligation • Takes 2 minutes</div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="text-center mt-4 text-xs text-gray-500">
+                This is an estimate only. Actual rates and payments depend on your credit profile and final approval.
+            </div>
+        </div>
+    </section>
+    
+    <!-- TESTIMONIALS -->
+    <section class="max-w-[1520px] mx-auto px-8 lg:px-10 pb-14">
+        <div class="text-center mb-8">
+            <h3 class="font-extrabold text-2xl tracking-tight">Real stories from real homeowners</h3>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <div class="testimonial-card border border-gray-200 rounded-2xl p-6">
+                <div class="flex items-center gap-x-3 mb-4">
+                    <div class="w-11 h-11 bg-gray-200 rounded-full overflow-hidden">
+                        <img src="https://i.pravatar.cc/44?img=28" alt="Sokunthea" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <div class="font-extrabold">Sokunthea Chan</div>
+                        <div class="text-xs text-gray-500">Teacher • Phnom Penh</div>
+                    </div>
+                </div>
+                <p class="text-sm leading-relaxed">"ABA made our first home possible. The fixed rate gave us peace of mind. We got approved the same day we applied!"</p>
+                <div class="mt-4 text-xs font-extrabold text-emerald-600">★ ★ ★ ★ ★ &nbsp; 5.0</div>
+            </div>
+            
+            <div class="testimonial-card border border-gray-200 rounded-2xl p-6">
+                <div class="flex items-center gap-x-3 mb-4">
+                    <div class="w-11 h-11 bg-gray-200 rounded-full overflow-hidden">
+                        <img src="https://i.pravatar.cc/44?img=32" alt="Vannak" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <div class="font-extrabold">Vannak &amp; Sreyneang</div>
+                        <div class="text-xs text-gray-500">Entrepreneurs • Siem Reap</div>
+                    </div>
+                </div>
+                <p class="text-sm leading-relaxed">"The $0 processing fee saved us over $2,000. The team was incredibly helpful and the whole process was smooth and transparent."</p>
+                <div class="mt-4 text-xs font-extrabold text-emerald-600">★ ★ ★ ★ ★ &nbsp; 5.0</div>
+            </div>
+            
+            <div class="testimonial-card border border-gray-200 rounded-2xl p-6">
+                <div class="flex items-center gap-x-3 mb-4">
+                    <div class="w-11 h-11 bg-gray-200 rounded-full overflow-hidden">
+                        <img src="https://i.pravatar.cc/44?img=47" alt="Dara" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <div class="font-extrabold">Dara Kim</div>
+                        <div class="text-xs text-gray-500">Software Engineer • Battambang</div>
+                    </div>
+                </div>
+                <p class="text-sm leading-relaxed">"I compared many banks. ABA's 6.5% fixed rate for 25 years was unbeatable. My monthly payment is lower than I expected. Highly recommend!"</p>
+                <div class="mt-4 text-xs font-extrabold text-emerald-600">★ ★ ★ ★ ★ &nbsp; 5.0</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FINAL CTA -->
+    <section class="bg-[#003087] py-12">
+        <div class="max-w-[1520px] mx-auto px-8 lg:px-10 text-center">
+            <h2 class="text-white text-3xl font-extrabold tracking-tight">Ready to own your dream home?</h2>
+            <p class="text-white/80 mt-2 max-w-md mx-auto">Join over 150,000 Cambodians who trusted ABA Bank with their biggest investment.</p>
+            
+            <div class="mt-7 flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="applyNow()" 
+                        class="px-14 py-4 bg-white text-[#003087] font-extrabold text-base rounded-2xl hover:bg-gray-100 active:scale-[0.985] transition-all flex items-center justify-center gap-x-3 shadow-xl">
+                    <span>Start Your Application Now</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+                
+                <button onclick="document.getElementById('calculator-section').scrollIntoView({ behavior: 'smooth' })" 
+                        class="px-10 py-4 border-2 border-white/70 hover:bg-white/10 text-white font-extrabold text-base rounded-2xl transition-all">
+                    Calculate First
+                </button>
+            </div>
+            
+            <div class="mt-5 text-white/60 text-xs">Takes less than 5 minutes • No credit impact for pre-approval</div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-white border-t">
+        <div class="max-w-[1520px] mx-auto px-8 lg:px-10 pt-7 pb-5">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-y-5">
+                <div class="flex items-center gap-x-5">
+                    <span class="text-xs uppercase tracking-wider font-extrabold text-gray-500">Follow Us</span>
+                    <div class="flex items-center gap-x-5 text-xl text-gray-600">
+                        <a href="#" class="hover:text-[#003087] transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="hover:text-[#003087] transition-colors"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#" class="hover:text-[#003087] transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="hover:text-[#003087] transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="hover:text-[#003087] transition-colors"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" class="hover:text-[#003087] transition-colors"><i class="fa-brands fa-telegram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-x-3">
+                    <div class="aba-logo w-9 h-9 rounded-lg flex flex-col items-center justify-center text-white scale-90 cursor-pointer" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+                        <span class="font-black text-lg tracking-[-1px] leading-none">ABA</span>
+                    </div>
+                    <span class="text-xs font-extrabold text-gray-500">ABA BANK</span>
+                </div>
+                
+                <div class="flex items-center gap-x-6 text-xs text-gray-500 font-medium">
+                    <a href="#" class="hover:text-gray-700 transition-colors">Disclaimer</a>
+                    <a href="#" class="hover:text-gray-700 transition-colors">Terms of Use</a>
+                    <a href="#" class="hover:text-gray-700 transition-colors">Privacy &amp; Cookies</a>
+                    <a href="#" class="hover:text-gray-700 transition-colors">Contact Us</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-dark text-white/90">
+            <div class="max-w-[1520px] mx-auto px-8 lg:px-10 py-4">
+                <div class="text-[10.5px] leading-relaxed text-center md:text-left opacity-90">
+                    <span class="font-extrabold">© ABA BANK</span> — All rights reserved.<br class="md:hidden">
+                    SWIFT: <span class="font-mono font-bold">ABAAKHPP</span> &nbsp;|&nbsp; Commercial bank license no. 14 dated 7 December 2023.<br>
+                    Head Office: #148, Preah Sihanouk Blvd, Sangkat Boeung Keng Kang I, Khan Boeung Keng Kang, Phnom Penh, Cambodia.<br>
+                    <span class="text-white/60">© Copyright Advanced Bank of Asia Ltd. 2026. All rights reserved.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Login Modal -->
+    <div id="loginModal" onclick="hideLoginModal()" class="hidden fixed inset-0 bg-black/70 z-[200] flex items-center justify-center">
+        <div onclick="event.stopImmediatePropagation()" class="bg-white w-full max-w-[400px] mx-4 rounded-3xl shadow-2xl overflow-hidden">
+            <div class="px-8 pt-8 pb-6">
+                <div class="flex justify-between items-start">
+                    <div class="text-center flex-1">
+                        <div class="aba-logo w-11 h-11 rounded-2xl mx-auto mb-3 flex items-center justify-center text-white shadow">
+                            <span class="font-black text-2xl">ABA</span>
+                        </div>
+                        <h3 class="font-extrabold text-2xl tracking-tight">Welcome back</h3>
+                        <p class="text-xs text-gray-500 mt-0.5">Sign in to manage your home loan</p>
+                    </div>
+                    <button onclick="hideLoginModal()" class="text-gray-400 hover:text-gray-600 -mr-1 -mt-1">
+                        <i class="fa-solid fa-times text-2xl"></i>
+                    </button>
+                </div>
+                
+                <div class="mt-7 space-y-5">
+                    <div>
+                        <label class="text-xs font-extrabold text-gray-500 block mb-1.5">USERNAME / PHONE NUMBER</label>
+                        <input type="text" value="john.doe" class="w-full border border-gray-300 rounded-2xl px-5 py-3 text-sm outline-none focus:border-[#003087]">
+                    </div>
+                    <div>
+                        <label class="text-xs font-extrabold text-gray-500 block mb-1.5">PASSWORD</label>
+                        <input type="password" value="demo1234" class="w-full border border-gray-300 rounded-2xl px-5 py-3 text-sm outline-none focus:border-[#003087]">
+                    </div>
+                    
+                    <div class="flex items-center justify-between text-xs">
+                        <label class="flex items-center gap-x-2 cursor-pointer">
+                            <input type="checkbox" checked class="accent-[#003087] w-3.5 h-3.5">
+                            <span class="text-gray-600 font-medium">Remember me</span>
+                        </label>
+                        <a href="#" class="text-[#003087] hover:underline font-extrabold">Forgot password?</a>
+                    </div>
+                    
+                    <button onclick="loginUser()" class="w-full py-3.5 bg-[#003087] hover:bg-[#00205B] active:bg-[#001a47] text-white font-extrabold rounded-2xl text-sm tracking-wider transition-all">
+                        LOG IN TO ABA
+                    </button>
+                    
+                    <div class="text-center text-xs">
+                        <span class="text-gray-500">Don't have an account?</span> 
+                        <a href="#" class="font-extrabold text-[#C8102E]">Register now</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-gray-50 py-4 px-8 text-center text-[10px] text-gray-500 border-t">
+                Secure login powered by ABA Bank • Cambodia
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Tailwind script
+        function initializeTailwind() {
+            // Already using CDN, no extra config needed
+        }
+        
+        /* ==================== SLIDESHOW ==================== */
+        let currentSlide = 0;
+        let autoTimer = null;
+        const slidesContainer = document.getElementById('heroSlides');
+        const dotsContainer = document.getElementById('slideDots');
+        const totalSlides = slidesContainer ? slidesContainer.children.length : 4;
+        
+        function createDots() {
+            if (!dotsContainer) return;
+            dotsContainer.innerHTML = '';
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('button');
+                dot.className = 'slide-dot' + (i === 0 ? ' active' : '');
+                dot.onclick = () => goToSlide(i);
+                dotsContainer.appendChild(dot);
+            }
+        }
+        
+        function goToSlide(index) {
+            if (!slidesContainer) return;
+            currentSlide = (index + totalSlides) % totalSlides;
+            slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            document.querySelectorAll('.slide-dot').forEach((d, i) => {
+                d.classList.toggle('active', i === currentSlide);
+            });
+        }
+        
+        function changeSlide(dir) {
+            goToSlide(currentSlide + dir);
+            resetAutoSlide();
+        }
+        
+        function resetAutoSlide() {
+            clearInterval(autoTimer);
+            autoTimer = setInterval(() => {
+                goToSlide(currentSlide + 1);
+            }, 4200);
+        }
+        
+        /* ==================== LANGUAGE SELECTOR ==================== */
+        function toggleLangDropdown() {
+            const dd = document.getElementById('lang-dropdown');
+            const arrow = document.getElementById('lang-arrow');
+            if (!dd || !arrow) return;
+            
+            const isOpen = dd.style.display === 'block';
+            dd.style.display = isOpen ? 'none' : 'block';
+            arrow.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
+        }
+        function selectLang(code, name) {
+            const label = document.getElementById('lang-label');
+            const checkEn = document.getElementById('check-en');
+            const checkKh = document.getElementById('check-kh');
+            const dd = document.getElementById('lang-dropdown');
+            const arrow = document.getElementById('lang-arrow');
+            
+            if (label) label.textContent = code;
+            if (checkEn) checkEn.style.visibility = code === 'EN' ? 'visible' : 'hidden';
+            if (checkKh) checkKh.style.visibility = code === 'KH' ? 'visible' : 'hidden';
+            if (dd) dd.style.display = 'none';
+            if (arrow) arrow.style.transform = 'rotate(0deg)';
+        }
+        /* ==================== LOGIN MODAL ==================== */
+        function showLoginModal() {
+            const modal = document.getElementById('loginModal');
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            }
+        }
+        function hideLoginModal() {
+            const modal = document.getElementById('loginModal');
+            if (modal) {
+                modal.classList.remove('flex');
+                modal.classList.add('hidden');
+            }
+        }
+        
+        function loginUser() {
+            const modal = document.getElementById('loginModal');
+            if (!modal) return;
+            
+            modal.innerHTML = `
+                <div class="bg-white w-full max-w-[400px] mx-4 rounded-3xl shadow-2xl p-10 text-center">
+                    <i class="fa-solid fa-check-circle text-emerald-500 text-6xl mb-5"></i>
+                    <h3 class="font-extrabold text-3xl tracking-tight">Login Successful!</h3>
+                    <p class="text-gray-600 mt-2">Welcome back to ABA Bank.<br>Your home loan dashboard is ready.</p>
+                    
+                    <button onclick="window.location.reload()" 
+                            class="mt-7 w-full py-3.5 bg-[#003087] hover:bg-[#00205B] text-white font-extrabold rounded-2xl text-sm tracking-wider">
+                        CONTINUE TO DASHBOARD
+                    </button>
+                </div>`;
+            
+            setTimeout(() => {
+                window.location.reload();
+            }, 2200);
+        }
+        
+        /* ==================== MORTGAGE CALCULATOR ==================== */
+        function calculateMonthlyPayment(principal, annualRate, years) {
+            const monthlyRate = annualRate / 100 / 12;
+            const numberOfPayments = years * 12;
+            
+            if (monthlyRate === 0) return principal / numberOfPayments;
+            
+            const payment = principal * 
+                (monthlyRate * Math.pow(1 + monthlyRate, numberOfPayments)) / 
+                (Math.pow(1 + monthlyRate, numberOfPayments) - 1);
+            
+            return payment;
+        }
+        
+        function updateCalculator() {
+            const loanAmountInput = document.getElementById('loanAmount');
+            const loanAmountRange = document.getElementById('loanAmountRange');
+            const loanTermSelect = document.getElementById('loanTerm');
+            
+            if (!loanAmountInput || !loanAmountRange || !loanTermSelect) return;
+            
+            let amount = parseFloat(loanAmountInput.value) || 180000;
+            const term = parseInt(loanTermSelect.value) || 20;
+            const rate = 6.5;
+            
+            // Sync range and number input
+            if (loanAmountRange.value != amount) {
+                loanAmountRange.value = amount;
+            }
+            if (loanAmountInput.value != amount) {
+                loanAmountInput.value = amount;
+            }
+            
+            const monthly = calculateMonthlyPayment(amount, rate, term);
+            const totalPaid = monthly * term * 12;
+            const totalInterest = totalPaid - amount;
+            
+            // Update UI
+            const monthlyEl = document.getElementById('monthlyPayment');
+            const interestEl = document.getElementById('totalInterest');
+            const totalEl = document.getElementById('totalPayable');
+            
+            if (monthlyEl) monthlyEl.textContent = '$' + monthly.toFixed(0).toLocaleString();
+            if (interestEl) interestEl.textContent = '$' + totalInterest.toFixed(0).toLocaleString();
+            if (totalEl) totalEl.textContent = '$' + totalPaid.toFixed(0).toLocaleString();
+        }
+        
+        function initializeCalculator() {
+            const range = document.getElementById('loanAmountRange');
+            const numberInput = document.getElementById('loanAmount');
+            const termSelect = document.getElementById('loanTerm');
+            
+            if (range) {
+                range.addEventListener('input', () => {
+                    if (numberInput) numberInput.value = range.value;
+                    updateCalculator();
+                });
+            }
+            
+            if (numberInput) {
+                numberInput.addEventListener('input', updateCalculator);
+            }
+            
+            if (termSelect) {
+                termSelect.addEventListener('change', updateCalculator);
+            }
+            
+            // Initial calculation
+            setTimeout(updateCalculator, 100);
+        }
+        
+        function applyNow() {
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-black/70 z-[300] flex items-center justify-center';
+            modal.innerHTML = `
+                <div class="bg-white w-full max-w-md mx-4 rounded-3xl p-9 text-center shadow-2xl">
+                    <div class="mx-auto w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mb-5">
+                        <i class="fa-solid fa-home text-3xl"></i>
+                    </div>
+                    <h3 class="font-extrabold text-2xl tracking-tight">Thank you!</h3>
+                    <p class="mt-2 text-gray-600">Your pre-approval request has been submitted successfully.</p>
+                    <p class="mt-1 text-sm text-gray-500">An ABA Home Loan specialist will contact you within 15 minutes.</p>
+                    
+                    <div class="mt-7 text-left bg-gray-50 rounded-2xl p-4 text-xs">
+                        <div class="font-bold mb-1">Next steps:</div>
+                        <ol class="list-decimal list-inside text-gray-600 space-y-0.5">
+                            <li>Upload your documents via ABA Mobile</li>
+                            <li>Property valuation (usually within 3 days)</li>
+                            <li>Final approval &amp; signing</li>
+                            <li>Funds disbursed to seller</li>
+                        </ol>
+                    </div>
+                    
+                    <button onclick="this.closest('.fixed').remove()" 
+                            class="mt-6 w-full py-3 bg-[#003087] text-white font-extrabold rounded-2xl text-sm">
+                        BACK TO HOMEPAGE
+                    </button>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+        
+        /* ==================== MOBILE MENU ==================== */
+        function initMobileMenu() {
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (!mobileBtn || !mobileMenu) return;
+            
+            mobileBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('open');
+                const icon = mobileBtn.querySelector('i');
+                if (icon) {
+                    if (mobileMenu.classList.contains('open')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                }
+            });
+            
+            document.addEventListener('click', function(e) {
+                if (!mobileBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+                    mobileMenu.classList.remove('open');
+                    const icon = mobileBtn.querySelector('i');
+                    if (icon) {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                }
+            });
+        }
+        
+        /* ==================== KEYBOARD SHORTCUTS &amp; INIT ==================== */
+        function initKeyboardShortcuts() {
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    const modal = document.getElementById('loginModal');
+                    if (modal && !modal.classList.contains('hidden')) {
+                        hideLoginModal();
+                    } else {
+                        // Close any other modals
+                        document.querySelectorAll('.fixed.inset-0').forEach(m => m.remove());
+                    }
+                }
+                
+                if (e.key === 'ArrowLeft') {
+                    const prevBtn = document.querySelector('.slide-btn.prev');
+                    if (prevBtn) changeSlide(-1);
+                }
+                
+                if (e.key === 'ArrowRight') {
+                    const nextBtn = document.querySelector('.slide-btn.next');
+                    if (nextBtn) changeSlide(1);
+                }
+                
+                if (e.key === '/' && document.activeElement.tagName === 'BODY') {
+                    e.preventDefault();
+                    const searchInput = document.querySelector('input[placeholder*="Search ABA"]');
+                    if (searchInput) searchInput.focus();
+                }
+            });
+            
+            // Close lang dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                const wrapper = document.getElementById('lang-wrapper');
+                const dd = document.getElementById('lang-dropdown');
+                if (wrapper && dd && !wrapper.contains(e.target)) {
+                    dd.style.display = 'none';
+                    const arrow = document.getElementById('lang-arrow');
+                    if (arrow) arrow.style.transform = 'rotate(0deg)';
+                }
+            });
+        }
+        
+        /* ==================== INITIALIZE EVERYTHING ==================== */
+        function initializePage() {
+            initializeTailwind();
+            
+            // Slideshow
+            if (document.getElementById('heroSlides')) {
+                createDots();
+                resetAutoSlide();
+                
+                // Pause on hover
+                const wrapper = document.querySelector('.hero-slide-wrapper');
+                if (wrapper) {
+                    wrapper.addEventListener('mouseenter', () => clearInterval(autoTimer));
+                    wrapper.addEventListener('mouseleave', resetAutoSlide);
+                }
+            }
+            
+            // Calculator
+            initializeCalculator();
+            
+            // Mobile menu
+            initMobileMenu();
+            
+            // Keyboard
+            initKeyboardShortcuts();
+            
+            // Make logos clickable to top
+            document.querySelectorAll('.aba-logo').forEach(logo => {
+                logo.style.cursor = 'pointer';
+            });
+            
+            // Add hide-scrollbar style if needed
+            if (!document.querySelector('style[data-hide-scrollbar]')) {
+                const style = document.createElement('style');
+                style.setAttribute('data-hide-scrollbar', '');
+                style.textContent = `
+                    .hide-scrollbar::-webkit-scrollbar { display: none; }
+                    .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+                `;
+                document.head.appendChild(style);
+            }
+            
+            // Initial calculator run
+            setTimeout(() => {
+                const calcSection = document.getElementById('calculator-section');
+                if (calcSection) {
+                    // Trigger initial calculation
+                    const evt = new Event('input');
+                    const range = document.getElementById('loanAmountRange');
+                    if (range) range.dispatchEvent(evt);
+                }
+            }, 300);
+            
+            // Subtle entrance animation for hero badge
+            setTimeout(() => {
+                const badge = document.querySelector('.loan-badge');
+                if (badge) {
+                    badge.style.transition = 'transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease';
+                }
+            }, 800);
+            
+            console.log('%c[ABA] Improved Home Loan page initialized successfully', 'color:#003087;font-size:9px');
+        }
+        
+        // Boot the page
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializePage);
+        } else {
+            initializePage();
+        }
+    </script>
+</body>
+</html>

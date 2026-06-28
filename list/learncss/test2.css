@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 2px 0 0 3px;
+
+}
+container{
+    background-color: rgb(208, 42, 70);
+    width: 400px;
+    height: 500px;
+
+}

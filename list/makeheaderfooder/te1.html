@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .container{
+        width: 95%;
+        height: 80px;
+        background: #2A7B9B;
+        background: linear-gradient(90deg, rgb(0, 158, 221) 0%, rgb(0, 255, 106) 50%, rgb(255, 230, 3) 100%);
+        margin: auto;
+        border-radius: 50px;
+        display: flex;
+    }
+    .left{
+        width: 55%;
+        height: 100%;
+        /* background-color: brown; */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .right{
+        width: 45%;
+        height: 100%;
+        /* background-color: crimson; */
+        display: flex;
+        justify-content: end;
+        align-items: center;
+    }
+    .img{
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        overflow: hidden;
+        background-color: aliceblue;
+    }
+    ul{
+        display: flex;
+        list-style: none;
+        gap: 20px;
+        align-items: center;
+    }
+    a{
+        text-decoration: none;
+        font-size: 24px;
+        font-weight: bold;
+        color: white;
+    }
+    li:hover{
+        text-decoration: underline;
+        color: rgba(17, 105, 229, 0.885);
+    }
+    li:hover a{
+        color: rgba(17, 105, 229, 0.885);
+    }
+    .btn{
+        display: flex;
+        gap: 20px;
+        padding: 30px;
+    }
+    button{
+        padding: 13px 23px;
+        border-radius: 20px;
+        border: 1px solid rgba(17, 105, 229, 0.885);
+        color: rgba(17, 105, 229, 0.885);
+    }
+    button:hover{
+        background-color: rgba(17, 105, 229, 0.885);
+        color: white;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="left">
+            <div class="img">
+                <img src="https://i.pinimg.com/736x/12/41/16/124116cdda68c2ceca19cdd43773a8b9.jpg" width="100%" height="100%" alt="">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Product</a></li>
+                    <li><a href="">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="right">
+            <div class="btn">
+                <button>Register</button>
+                <button>Login</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

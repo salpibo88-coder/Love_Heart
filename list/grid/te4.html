@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .card{
+    display: grid;
+    gap: 10px;
+    padding: 20px;
+    background: #f5f5f5;
+    border-radius: 12px;
+}
+
+.box{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="card">
+        <img src="..." alt="">
+        <div class="box">
+            <h3>Wireless Over-Ear Headphones</h3>
+            <span class="price">$59.00</span>
+        </div>
+        <p class="desc">Organic catoon, high-fidelity audio</p>
+        <div class="rating">★★★★★ <span>(220)</span></div>
+        <button>Add To Cart</button>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Full width utility */
+        .container-xl-fluid { max-width: 95%; margin: auto; }
+        .dot-pulse { display: inline-block; font-weight: bold; }
+        .dot-pulse::after { content: '...'; display: inline-block; animation: dot-animation 1.5s infinite; }
+        @keyframes dot-animation {
+            0% { content: '.'; } 33% { content: '..'; } 66% { content: '...'; } 100% { content: ''; }
+        }
+        .navbar-nav .nav-link:hover { color: #0d6efd !important; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-light shadow-sm py-2">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand" href="#">
+                <img src="https://cdn.pixabay.com/photo/2022/08/22/02/05/logo-7402513_640.png" width="40" height="40" alt="Logo">
+            </a>
+        
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item px-3"><a class="nav-link fw-medium" href="#">Home</a></li>
+                    <li class="nav-item px-3"><a class="nav-link fw-medium" href="#">About</a></li>
+                    <li class="nav-item px-3"><a class="nav-link fw-medium" href="#">Contact us</a></li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid px-4 py-5">
+        <div class="d-flex text-primary align-items-center mb-4">
+            <h3 class="mb-0">Loading</h3>
+            <span class="dot-pulse fs-3 ms-2"></span>
+        </div>
+        <hr class="mb-5">
+        <div class="row g-4">
+            <script>
+                for(let i=0; i<8; i++) {
+                    document.write(`
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                        <div class="card border-0 shadow-sm" aria-hidden="true">
+                            <div class="card-img-top bg-light d-flex align-items-center justify-content-center" style="height: 150px;">
+                                <div class="spinner-border text-primary" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title placeholder-glow"><span class="placeholder col-6"></span></h5>
+                                <p class="card-text placeholder-glow">
+                                    <span class="placeholder col-7"></span>
+                                    <span class="placeholder col-4"></span>
+                                    <span class="placeholder col-4"></span>
+                                    <span class="placeholder col-6"></span>
+                                    <span class="placeholder col-8"></span>
+                                </p>
+                                <a href="#" class="btn btn-primary disabled placeholder col-6" aria-disabled="true"></a>
+                            </div>
+                        </div>
+                    </div>`);
+                }
+            </script>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
