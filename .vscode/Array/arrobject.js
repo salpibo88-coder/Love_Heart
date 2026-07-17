@@ -1,0 +1,34 @@
+const student=[
+    {
+        id:1,
+        name:"pisal",
+        gender:"Male",
+        age:12
+    },
+     {
+        id:2,
+        name:"Hogy",
+        gender:"female",
+        age:12
+    },
+     {
+        id:3,
+        name:"Pifogy",
+        gender:"Male",
+        age:12
+    },
+     {
+        id:4,
+        name:"Lala",
+        gender:"Male",
+        age:12
+    },
+]
+student.forEach(function(value){
+    console.log('-----------');
+    console.log("id",value.id);
+    console.log("name",value.name);
+    console.log("gender",value.gender);
+    console.log("age",value.age);
+
+})

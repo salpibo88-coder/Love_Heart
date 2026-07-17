@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <script>
+            let score1 = parseFloat(prompt("Enter score 1:"));
+            let score2 = parseFloat(prompt("Enter score 2:"));
+            let score3 = parseFloat(prompt("Enter score 3:"));
+            let score4 = parseFloat(prompt("Enter score 4:"));
+            let score5 = parseFloat(prompt("Enter score 5:"));
+            let total = score1 + score2 + score3 + score4 + score5;
+            let average = total / 5;
+            let grade;
+            if (average >= 90) {
+                grade = 'A';
+            } else if (average >= 80) {
+                grade = 'B';
+            } else if (average >= 70) {
+                grade = 'C';
+            } else if (average >= 60) {
+                grade = 'D';
+            } else if (average >= 50) {
+                grade = 'E';
+            } else {
+                grade = 'F';
+            }
+            console.log("--- Student Results ---");
+            console.log("Score 1: " + score1);
+            console.log("Score 2: " + score2);
+            console.log("Score 3: " + score3);
+            console.log("Score 4: " + score4);
+            console.log("Score 5: " + score5);
+            console.log("Total: " + total);
+            console.log("Average: " + average);
+            console.log("Grade: " + grade);
+</script>
+</body>
+</html> 
